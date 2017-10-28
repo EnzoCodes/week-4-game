@@ -1,8 +1,13 @@
 $(document).ready(function() {
 
-    $().on("click", function()){
+
+
+    $("#start").on("click", function() {
     // Start by hiding Id= crystals
     // Show crystals on("click", #startButton)
+    $("#start").hide();
+    $('.show').css('display', 'block');
+
 
     var targetNum;
     var bagWeight = 0;
@@ -42,7 +47,7 @@ $(document).ready(function() {
             if (bagWeight === targetNum) {
                 wins++;
                 $("#wins").text(wins);
-                alert("Your bag is full, and you got away!");
+                alert("You win! Your bag is full!");
                 // Resetting BagWeight.
                 bagWeight = 0;
                 $("#bagWeight").text(bagWeight);
@@ -53,7 +58,7 @@ $(document).ready(function() {
             }
             else if (bagWeight > targetNum) {
                 losses++;
-                alert("Your bag broke! You're being sent to the dwarf gulag. Oh no!");
+                alert("Oh no! Your bag broke!");
                 $("#losses").text(losses);
                 // Resetting BagWeight.
                 bagWeight = 0;
@@ -62,12 +67,6 @@ $(document).ready(function() {
                 targetNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
                 return;
             }
-        });
-    });
-
-
-    //$(".reset").on("click", function (){
-    // crystalSet
-    //});
-
-});
+        }); // Closing main game function.
+    }); // Closing Reset
+}); // Closing Doc Ready
