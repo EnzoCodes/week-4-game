@@ -15,8 +15,11 @@ $(document).ready(function() {
     var losses = 0;
 
     //Generating Target Number and printing to screen.
+    function maxWeight() {
     targetNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
     $("#targetNum").text(targetNum);
+    }
+    maxWeight();
 
     var gemImg = ["assets/images/blueGem.png", "assets/images/redGem.png",
                     "assets/images/goldGem.png", "assets/images/clearGem.png"];
@@ -52,8 +55,7 @@ $(document).ready(function() {
                 bagWeight = 0;
                 $("#bagWeight").text(bagWeight);
                 // Gerating new Target number...
-                targetNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-                $("#targetNum").text(targetNum);
+                maxWeight();
                 return;
             }
             else if (bagWeight > targetNum) {
@@ -64,7 +66,7 @@ $(document).ready(function() {
                 bagWeight = 0;
                 $("#bagWeight").text(bagWeight);
                 // Gerating new Target number...
-                targetNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+                maxWeight();
                 return;
             }
         }); // Closing main game function.

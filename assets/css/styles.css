@@ -13,19 +13,27 @@ body {
 
 p{
     text-align: left;
+    line-height: 20px !important;
     padding-bottom: 5px;
+    font-size: 0.5em;
+    font-family: 'Press Start 2P', cursive !important;
 }
 article {
 max-width: 65%;
 padding: 10%;
+font-family: 'Press Start 2P', cursive;
 }
 
 div {
+    font-family: 'Press Start 2P', cursive;
+    line-height: 15px;
+    font-size: 0.9em;
     text-align: justify;
     max-width: 80%;
     display: border-box;
     max-height: 250px;
     padding-bottom: 15px;
+
 }
 
 span {
@@ -43,7 +51,6 @@ span {
     color: #fff;
     height: 100vh
 }
-
 
 .box {
   position:relative;
@@ -100,9 +107,30 @@ span {
 
 .start:active {
     height: 80%;
-    width:80;
+    width:80%;
 }
 
 .box:hover::after, .box:hover::before {
   -webkit-transform: scale(1);
 }
+
+
+@keyframes enterDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.enterDown {
+  animation-name: enterDown;
+}
+
+@media screen and  {
+
+ }
