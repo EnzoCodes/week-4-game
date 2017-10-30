@@ -29,7 +29,7 @@ $(document).ready(function() {
         var imgCrystal = $("<img>");
 
         imgCrystal.attr("src", gemImg[i]);
-        imgCrystal.attr("class", "crystal-img");
+        imgCrystal.attr("class", "crystal-img" + i);
         imgCrystal.attr("value", randy);
 
         $("#crystals").append(imgCrystal);
@@ -38,37 +38,38 @@ $(document).ready(function() {
     // $("#gemSum").text();
     // $("#win").text();
     // $("#lose").text();
+    for (var i=0; i < gemImg.length; i++) {
+        $(".crystal-img"+i).on("click", function(){
+                var crystalValue = ($(this).attr("value"));
+                crystalValue = parseInt(crystalValue);
+                console.log(crystalValue);
 
-    $(".crystal-img").on("click", function(){
-            var crystalValue = ($(this).attr("value"));
-            crystalValue = parseInt(crystalValue);
-            console.log(crystalValue);
-
-            bagWeight = bagWeight + crystalValue;
-            $("#bagWeight").text(bagWeight);
-
-            if (bagWeight === targetNum) {
-                wins++;
-                $("#wins").text(wins);
-                alert("You win! Your bag is full!");
-                // Resetting BagWeight.
-                bagWeight = 0;
+                bagWeight = bagWeight + crystalValue;
                 $("#bagWeight").text(bagWeight);
-                // Gerating new Target number...
-                maxWeight();
-                return;
-            }
-            else if (bagWeight > targetNum) {
-                losses++;
-                alert("Oh no! Your bag broke!");
-                $("#losses").text(losses);
-                // Resetting BagWeight.
-                bagWeight = 0;
-                $("#bagWeight").text(bagWeight);
-                // Gerating new Target number...
-                maxWeight();
-                return;
-            }
-        }); // Closing main game function.
+
+                if (bagWeight === targetNum) {
+                    wins++;
+                    $("#wins").text(wins);
+                    alert("You win! Your bag is full!");
+                    // Resetting BagWeight.
+                    bagWeight = 0;
+                    $("#bagWeight").text(bagWeight);
+                    // Gerating new Target number...
+                    maxWeight();
+                    return;
+                }
+                else if (bagWeight > targetNum) {
+                    losses++;
+                    alert("Oh no! Your bag broke!");
+                    $("#losses").text(losses);
+                    // Resetting BagWeight.
+                    bagWeight = 0;
+                    $("#bagWeight").text(bagWeight);
+                    // Gerating new Target number...
+                    maxWeight();
+                    return;
+                }
+            }); // Closing main game function.
+        };
     }); // Closing Reset
 }); // Closing Doc Ready

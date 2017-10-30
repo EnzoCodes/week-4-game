@@ -1,8 +1,8 @@
 * {
   font-family: sans-serif;
   font-weight: 100;
-  font-size: 20px;
   margin: 0 auto;
+  font-family: "Arial Black", Gadget, sans-serif;
 }
 
 body {
@@ -18,6 +18,7 @@ p{
     font-size: 0.5em;
     font-family: 'Press Start 2P', cursive !important;
 }
+
 article {
 max-width: 65%;
 padding: 10%;
@@ -26,33 +27,48 @@ font-family: 'Press Start 2P', cursive;
 
 div {
     font-family: 'Press Start 2P', cursive;
-    line-height: 15px;
-    font-size: 0.9em;
     text-align: justify;
     max-width: 80%;
     display: border-box;
     max-height: 250px;
     padding-bottom: 15px;
-
 }
 
 span {
     padding-right: 25%;
 }
 
-.crystal-img {
-    width: 80px;
-    margin-right: 10px;
+.lossPrint {
+    margin-bottom: 45px;
+}
+
+.crystal-img0:hover{
+    -webkit-transition:3s;
+    transform: rotateY(360deg);
+}
+
+.crystal-img1:hover{
+    -webkit-transition:3s;
+    transform: rotateY(360deg);
+}
+.crystal-img2:hover{
+    -webkit-transition:3s;
+    transform: rotateY(360deg);
+}
+.crystal-img3:hover{
+    -webkit-transition:3s;
+    transform: rotateY(360deg);
 }
 
 .wrapper {
     position: 0 auto;
     line-height: none;
     color: #fff;
-    height: 100vh
+    height: 100vh;
 }
 
 .box {
+  font-family: "Arial Black", Gadget, sans-serif;
   position:relative;
   vertical-align: middle;
   color: #25357F;
@@ -107,30 +123,9 @@ span {
 
 .start:active {
     height: 80%;
-    width:80%;
+    /*width:80%;*/
 }
 
 .box:hover::after, .box:hover::before {
   -webkit-transform: scale(1);
 }
-
-
-@keyframes enterDown {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -100%, 0);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.enterDown {
-  animation-name: enterDown;
-}
-
-@media screen and  {
-
- }
